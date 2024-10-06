@@ -1,0 +1,16 @@
+.movie-card {
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.movie-card h3 {
+  background-color: blue;
+  color: white;
+  padding: 6px;
+}
+
+.movie-card p {
+  background-color: blue;
+  color: white;
+  padding: 6px;
+}
