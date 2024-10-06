@@ -2,16 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { MovieType } from "../types";
 
-function useFetch(limit?: true | false) {
-  const [data, setData] = useState<MovieType[]>([]);
+function useSingleMovieFetch(id: string) {
+  const [data, setData] = useState<MovieType | null>(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
   async function getData() {
-    const url = limit ? "https://ghibliapi.vercel.app/films?limit=9" : "https://ghibliapi.vercel.app/films";
-
     try {
-      const { data } = await axios.get(url);
+      const { data } = await axios.get("https://ghibliapi.vercel.app/films/" + id);
       setData(data);
       setLoading(false);
     } catch (error) {
@@ -22,7 +20,7 @@ function useFetch(limit?: true | false) {
 
   useEffect(() => {
     getData()
-  }, []);
+  }, [id]);
 
   return {
     data,
@@ -31,4 +29,4 @@ function useFetch(limit?: true | false) {
   };
 }
 
-export default useFetch;
+export default useSingleMovieFetch;

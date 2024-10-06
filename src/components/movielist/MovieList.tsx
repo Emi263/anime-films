@@ -3,7 +3,6 @@ import MovieCard from "./components/movieCard/MovieCard"
 import "./movieList.css";
 import { GlobalContext } from "../../context/GlobalContext";
 import useFetch from "../../hooks/useFetch";
-import { Spin } from "antd";
 import Loading from "../common/Loading";
 import Error from "../common/Error";
 
@@ -13,7 +12,7 @@ function MovieList() {
     data: movies,
     loading,
     error
-  } = useFetch();
+  } = useFetch(true);
 
   const { theme } = useContext(GlobalContext);
 
@@ -32,7 +31,7 @@ function MovieList() {
     } className="movie-list" >
       {
         movies.map((movie) => {
-          return <MovieCard imageUrl={movie.movie_banner} title={movie.title} rating={movie.rt_score} key={movie.id} />
+          return <MovieCard rt_score={movie.rt_score} description={movie.description} id={movie.id} imageUrl={movie.movie_banner} title={movie.title} rating={movie.rt_score} key={movie.id} />
         })
       }
     </div >

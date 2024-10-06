@@ -7,6 +7,8 @@ import { GlobalContext } from './context/GlobalContext';
 import { useState } from 'react';
 import { LocalesType, ThemeType } from './types';
 import HomePage from './pages/HomePage';
+import SingleMovie from './pages/SingleMovie';
+import AllMovies from './pages/AllMovies';
 
 function App() {
 
@@ -16,8 +18,12 @@ function App() {
       element: <HomePage />
     },
     {
-      path: "about",
-      element: <div>About</div>,
+      path: '/all-movies',
+      element: <AllMovies />,
+    },
+    {
+      path: "movie/:id",
+      element: <SingleMovie />,
     },
   ]);
 
