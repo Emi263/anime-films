@@ -4,6 +4,9 @@ import {
   RouterProvider,
   Link,
 } from "react-router-dom";
+import { GlobalContext } from './context/GlobalContext';
+import { useState } from 'react';
+import { LocalesType, ThemeType } from './types';
 
 function App() {
 
@@ -23,8 +26,14 @@ function App() {
     },
   ]);
 
+  const [theme, setTheme] = useState<ThemeType>("light");
+  const [locale, setLocale] = useState<LocalesType>("sq");
+
   return (
-    <RouterProvider router={router} />
+
+    <GlobalContext.Provider value={{ theme, setTheme, locale, setLocale }}>
+      <RouterProvider router={router} />
+    </GlobalContext.Provider>
   )
 }
 
