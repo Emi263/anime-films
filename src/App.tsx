@@ -22,7 +22,7 @@ function App() {
           count is {count}
         </button>
         <p>
-          Feature authentication
+          Feature authentication - refactored
         </p>
       </div>
       <p className="read-the-docs">
