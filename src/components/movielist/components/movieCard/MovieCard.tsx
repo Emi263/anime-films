@@ -1,12 +1,17 @@
 import "./movieCard.css";
 
+interface Props {
+  imageUrl: string;
+  title: string;
+  rating: string;
+}
 
-function MovieCard() {
+function MovieCard(props: Props) {
   return (
     <article className="movie-card">
-      <img src='https://image.tmdb.org/t/p/w533_and_h300_bestv2/3cyjYtLWCBE1uvWINHFsFnE8LUK.jpg' alt='' />
-      <h3>Castle in the Sky</h3>
-      <p>Rating: 95</p>
+      <img src={props.imageUrl} alt='' />
+      <h3>{props.title}</h3>
+      <p>Rating: {props.rating}</p>
     </article>
 
   )

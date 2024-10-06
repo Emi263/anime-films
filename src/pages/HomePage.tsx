@@ -6,7 +6,6 @@ function HomePage() {
     <>
       <Header />
       <MovieList />
-      {/**List of Films */}
       {/**Footer */}
     </>
   )
