@@ -2,23 +2,18 @@ import './App.css'
 import {
   createBrowserRouter,
   RouterProvider,
-  Link,
 } from "react-router-dom";
 import { GlobalContext } from './context/GlobalContext';
 import { useState } from 'react';
 import { LocalesType, ThemeType } from './types';
+import HomePage from './pages/HomePage';
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <div>
-          <h1>Hello World</h1>
-          <Link to="about">About Us</Link>
-        </div>
-      ),
+      element: <HomePage />
     },
     {
       path: "about",
@@ -26,7 +21,7 @@ function App() {
     },
   ]);
 
-  const [theme, setTheme] = useState<ThemeType>("light");
+  const [theme, setTheme] = useState<ThemeType>("dark");
   const [locale, setLocale] = useState<LocalesType>("sq");
 
   return (
@@ -37,4 +32,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

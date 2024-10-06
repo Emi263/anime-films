@@ -1,0 +1,39 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  align-items: center;
+}
+
+header img {
+  width: 150px;
+  height: 100px;
+
+}
+
+header img:hover {
+  cursor: pointer;
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 18px;
+}
+
+header input {
+  padding: 12px 24px;
+  border-radius: 10px;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+header a:hover {
+  color: blue;
+}

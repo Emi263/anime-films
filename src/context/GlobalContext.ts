@@ -1,8 +1,6 @@
 import { createContext } from "react";
 import { LocalesType, ThemeType } from "../types";
 
-
-
 const defaultValue: {
   theme: ThemeType,
   setTheme: React.Dispatch<React.SetStateAction<ThemeType>>,
